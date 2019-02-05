@@ -1,0 +1,18 @@
+<div *ngIf="song">
+
+  <h2>{{song.title | uppercase}}</h2>
+  <div id="song_detail_container">
+    <label>Title:
+      <input [(ngModel)]="song.title" placeholder="title" />
+    </label>
+    <label>BPM:
+      <input [(ngModel)]="song.bpm" placeholder="bpm">
+    </label>
+    <label> Writer:
+      <input [(ngModel)]="song.writer" placeholder="writer">
+    </label>
+  </div>
+
+</div>
+<button (click)="save()">save</button>
+<button (click)="goBack()">go back</button>
