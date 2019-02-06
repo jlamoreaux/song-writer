@@ -16,6 +16,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SongDetailComponent } from './song-detail/song-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SongSearchComponent } from './song-search/song-search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ProfileComponent,
     SongDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    SongSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -40,6 +40,18 @@ export class SongService {
     );
   }
 
+  /* GET songs whose name contains search term */
+  searchSongs(term: string): Observable<Song[]> {
+    if (!term.trim()) {
+      // if not search term, return empty song array.
+      return of([]);
+    }
+    return this.http.get<Song[]>(`${this.songsUrl}/?title=${term}`).pipe(
+      tap(_ => this.log(`found songs matching "${term}"`)),
+      catchError(this.handleError<Song[]>('searchSongs', []))
+    );
+  }
+
   /** PUT: update the song on the server */
   updateSong (song: Song): Observable<any> {
     return this.http.put(this.songsUrl, song, httpOptions).pipe(
